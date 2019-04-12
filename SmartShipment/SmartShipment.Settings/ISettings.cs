@@ -20,6 +20,7 @@ namespace SmartShipment.Settings
         string AcumaticaDefaultBoxId { get; set; }
         int GeneralApplicationStartPositionTop { get; set; }
         int GeneralApplicationStartPositionLeft { get; set; }
+        int GeneralTransferSpeed { get; set; }
 
         void Save();
         bool IsSettingsRequireSetValues();

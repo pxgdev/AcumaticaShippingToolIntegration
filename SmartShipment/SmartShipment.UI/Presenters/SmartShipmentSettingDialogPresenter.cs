@@ -71,6 +71,8 @@ namespace SmartShipment.UI.Presenters
             BindControlCheckedProperty(View.AcumaticaConfirmShipments, settings, nameof(settings.AcumaticaConfirmShipment));
             BindControlCheckedProperty(View.UpsAddUpdateAddressBook, settings, nameof(settings.UpsAddUpdateAddressBook));
             BindControlCheckedProperty(View.FedexAddUpdateAddressBook, settings, nameof(settings.FedexAddUpdateAddressBook));
+
+            BindControlComboBoxProperty(View.GeneralTransferSpeed, settings, nameof(settings.GeneralTransferSpeed));
         }
 
         public static void SetDefaults(ISettings settings)
@@ -86,6 +88,11 @@ namespace SmartShipment.UI.Presenters
         private void BindControlCheckedProperty(CheckBox control, ISettings settings, string property)
         {
             control.DataBindings.Add(nameof(control.Checked), settings, property, false, DataSourceUpdateMode.OnPropertyChanged);
+        }
+
+        private void BindControlComboBoxProperty(ComboBox control, ISettings settings, string property)
+        {
+            control.DataBindings.Add(nameof(control.SelectedValue), settings, property, false, DataSourceUpdateMode.OnPropertyChanged);
         }
     }
 }

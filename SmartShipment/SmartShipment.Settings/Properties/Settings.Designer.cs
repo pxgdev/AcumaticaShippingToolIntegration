@@ -39,7 +39,7 @@ namespace SmartShipment.Settings.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Devices\\UPS\\UPSOUT.txt")]
         public string UpsExportFilePath {
             get {
                 return ((string)(this["UpsExportFilePath"]));
@@ -65,7 +65,7 @@ namespace SmartShipment.Settings.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("/fexex")]
         public string FedexExportFilePath {
             get {
                 return ((string)(this["FedexExportFilePath"]));
@@ -101,7 +101,7 @@ namespace SmartShipment.Settings.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Company")]
         public string AcumaticaCompany {
             get {
                 return ((string)(this["AcumaticaCompany"]));
@@ -114,6 +114,7 @@ namespace SmartShipment.Settings.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool AcumaticaConfirmShipment {
             get {
                 return ((bool)(this["AcumaticaConfirmShipment"]));
@@ -126,6 +127,7 @@ namespace SmartShipment.Settings.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool UpsAddUpdateAddressBook {
             get {
                 return ((bool)(this["UpsAddUpdateAddressBook"]));
@@ -176,7 +178,7 @@ namespace SmartShipment.Settings.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://acu.local/ACM7")]
         public string AcumaticaBaseUrl {
             get {
                 return ((string)(this["AcumaticaBaseUrl"]));
@@ -215,13 +217,26 @@ namespace SmartShipment.Settings.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Configuration.SettingsProviderAttribute(typeof(SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider))]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public string AcumaticaDefaultBoxId {
             get {
                 return ((string)(this["AcumaticaDefaultBoxId"]));
             }
             set {
                 this["AcumaticaDefaultBoxId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsProviderAttribute(typeof(SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider))]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("500")]
+        public int GeneralTransferSpeed {
+            get {
+                return ((int)(this["GeneralTransferSpeed"]));
+            }
+            set {
+                this["GeneralTransferSpeed"] = value;
             }
         }
     }

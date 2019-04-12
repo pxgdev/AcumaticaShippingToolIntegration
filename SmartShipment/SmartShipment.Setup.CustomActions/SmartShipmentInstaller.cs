@@ -21,7 +21,7 @@ namespace SmartShipment.Setup.CustomActions
         public SmartShipmentInstaller()
         {
             #if DEBUG
-            //System.Diagnostics.Debugger.Launch();
+            System.Diagnostics.Debugger.Launch();
             #endif
 
             InitializeComponent();

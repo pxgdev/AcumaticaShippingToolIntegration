@@ -68,7 +68,7 @@ namespace SmartShipment.Adapters.Map
             {
                 Name = "Contact name",
                 AutomaitonId = "edtContact",                
-                DataFieldName = nameof(ShipmentContact.Position),
+                DataFieldName = nameof(ShipmentContact.DisplayName),
                 ShipmentDataType = ShipmentDataType.Shipment,
                 ValidateFunc = s => s == _contactName.Value,
                 IsValueRequired = true,

@@ -30,12 +30,15 @@ namespace SmartShipment.UI.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBoxAdvanced = new System.Windows.Forms.GroupBox();
             this.groupBoxAcumatica = new System.Windows.Forms.GroupBox();
             this.textBoxAcumaticaDefaultBoxId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxAcumaticaConfirmShipment = new System.Windows.Forms.CheckBox();
             this.groupBoxFedex = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxTransferSpeed = new System.Windows.Forms.ComboBox();
             this.checkBoxFedexAddUpdateAddressBook = new System.Windows.Forms.CheckBox();
             this.groupBoxUps = new System.Windows.Forms.GroupBox();
             this.checkBoxUpsAddUpdateAddressBook = new System.Windows.Forms.CheckBox();
@@ -51,6 +54,7 @@ namespace SmartShipment.UI.Forms
             this.labelLogin = new System.Windows.Forms.Label();
             this.textAcumaticaLogin = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBoxAdvanced.SuspendLayout();
             this.groupBoxAcumatica.SuspendLayout();
             this.groupBoxFedex.SuspendLayout();
@@ -67,7 +71,7 @@ namespace SmartShipment.UI.Forms
             this.groupBoxAdvanced.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxAdvanced.Name = "groupBoxAdvanced";
             this.groupBoxAdvanced.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxAdvanced.Size = new System.Drawing.Size(354, 226);
+            this.groupBoxAdvanced.Size = new System.Drawing.Size(354, 254);
             this.groupBoxAdvanced.TabIndex = 2;
             this.groupBoxAdvanced.TabStop = false;
             this.groupBoxAdvanced.Text = "Advanced Settings";
@@ -119,15 +123,36 @@ namespace SmartShipment.UI.Forms
             // 
             this.groupBoxFedex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxFedex.Controls.Add(this.label2);
+            this.groupBoxFedex.Controls.Add(this.comboBoxTransferSpeed);
             this.groupBoxFedex.Controls.Add(this.checkBoxFedexAddUpdateAddressBook);
             this.groupBoxFedex.Location = new System.Drawing.Point(11, 161);
             this.groupBoxFedex.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxFedex.Name = "groupBoxFedex";
             this.groupBoxFedex.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxFedex.Size = new System.Drawing.Size(334, 53);
+            this.groupBoxFedex.Size = new System.Drawing.Size(334, 79);
             this.groupBoxFedex.TabIndex = 8;
             this.groupBoxFedex.TabStop = false;
             this.groupBoxFedex.Text = "FedEx Ship Manager";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(138, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(179, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Transfer Speed (requires app restart)";
+            // 
+            // comboBoxTransferSpeed
+            // 
+            this.comboBoxTransferSpeed.FormattingEnabled = true;
+            this.comboBoxTransferSpeed.Location = new System.Drawing.Point(11, 43);
+            this.comboBoxTransferSpeed.Name = "comboBoxTransferSpeed";
+            this.comboBoxTransferSpeed.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTransferSpeed.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.comboBoxTransferSpeed, "Slow: Watching paint dry but you can see the data\r\nMedium: Sweet spot - Default\r\n" +
+        "Fast: You might blow a piston - please validate data");
             // 
             // checkBoxFedexAddUpdateAddressBook
             // 
@@ -167,7 +192,7 @@ namespace SmartShipment.UI.Forms
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOk.Location = new System.Drawing.Point(87, 393);
+            this.btnOk.Location = new System.Drawing.Point(84, 426);
             this.btnOk.Margin = new System.Windows.Forms.Padding(2);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(100, 24);
@@ -287,7 +312,7 @@ namespace SmartShipment.UI.Forms
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(191, 393);
+            this.btnCancel.Location = new System.Drawing.Point(188, 426);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 24);
@@ -299,7 +324,7 @@ namespace SmartShipment.UI.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 424);
+            this.ClientSize = new System.Drawing.Size(376, 461);
             this.Controls.Add(this.groupBoxAdvanced);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.groupBoxCredentials);
@@ -349,5 +374,8 @@ namespace SmartShipment.UI.Forms
         private TextBox textBoxBaseUrl;
         private TextBox textBoxAcumaticaDefaultBoxId;
         private Label label1;
+        private ToolTip toolTip1;
+        private ComboBox comboBoxTransferSpeed;
+        private Label label2;
     }
 }

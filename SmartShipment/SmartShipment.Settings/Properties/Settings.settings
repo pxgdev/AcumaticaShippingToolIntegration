@@ -6,31 +6,31 @@
       <Value Profile="(Default)">WorldShipTD</Value>
     </Setting>
     <Setting Name="UpsExportFilePath" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Devices\UPS\UPSOUT.txt</Value>
     </Setting>
     <Setting Name="FedexProcessName" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)">FedEx.Gsm.Cafe.ApplicationEngine.Gui</Value>
     </Setting>
     <Setting Name="FedexExportFilePath" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">/fexex</Value>
     </Setting>
     <Setting Name="AcumaticaLogin" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" GenerateDefaultValueInCode="false" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">pmccormack</Value>
     </Setting>
     <Setting Name="AcumaticaPassword" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" GenerateDefaultValueInCode="false" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AcumaticaCompany" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Company</Value>
     </Setting>
     <Setting Name="AcumaticaConfirmShipment" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="UpsAddUpdateAddressBook" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="FedexAddUpdateAddressBook" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="AcumaticaSoapDataEndPoint" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)">/entity/Default/6.00.001</Value>
@@ -39,7 +39,7 @@
       <Value Profile="(Default)">/entity/auth/login</Value>
     </Setting>
     <Setting Name="AcumaticaBaseUrl" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">http://acu.local/ACM7</Value>
     </Setting>
     <Setting Name="GeneralApplicationStartPositionTop" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -48,7 +48,10 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="AcumaticaDefaultBoxId" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="GeneralTransferSpeed" Provider="SmartShipment.Settings.SettingsProvider.SmartShipmentSettingsProvider" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
     </Setting>
   </Settings>
 </SettingsFile>

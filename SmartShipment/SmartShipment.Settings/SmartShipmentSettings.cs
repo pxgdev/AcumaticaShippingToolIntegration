@@ -237,6 +237,20 @@ namespace SmartShipment.Settings
                 OnPropertyChanged(nameof(GeneralApplicationStartPositionLeft));
             }
         }
+        
+        public int GeneralTransferSpeed
+        {
+            get { return _settings.GeneralTransferSpeed; }
+            set
+            {
+                if (_settings.GeneralTransferSpeed != value)
+                {
+                    _messagesProvider.Log(string.Format(InformationResources.INFO_PROPERTY_VALUE_CHANGED, nameof(GeneralTransferSpeed), _settings.GeneralTransferSpeed, value));
+                }
+                _settings.GeneralTransferSpeed = value;
+                OnPropertyChanged(nameof(GeneralTransferSpeed));
+            }
+        }
 
         public void Save()
         {            
@@ -271,10 +285,11 @@ namespace SmartShipment.Settings
             OnPropertyChanged(nameof(AcumaticaDefaultBoxId));
             OnPropertyChanged(nameof(GeneralApplicationStartPositionTop));
             OnPropertyChanged(nameof(GeneralApplicationStartPositionLeft));
-            OnPropertyChanged(nameof(AcumaticaPassword));
-            OnPropertyChanged(nameof(AcumaticaLogin));
-            OnPropertyChanged(nameof(AcumaticaBaseUrl));
-            OnPropertyChanged(nameof(AcumaticaDefaultBoxId));
+            OnPropertyChanged(nameof(GeneralTransferSpeed));
+            //OnPropertyChanged(nameof(AcumaticaPassword));
+            //OnPropertyChanged(nameof(AcumaticaLogin));
+            //OnPropertyChanged(nameof(AcumaticaBaseUrl));
+            //OnPropertyChanged(nameof(AcumaticaDefaultBoxId));
         }
 
         public bool IsSettingsRequireSetValues()

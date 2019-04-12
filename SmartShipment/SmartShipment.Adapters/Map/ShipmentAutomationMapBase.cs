@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Windows.Automation;
 using SmartShipment.Adapters.Common;
 using SmartShipment.Adapters.Control;
@@ -9,11 +10,15 @@ using SmartShipment.Information;
 using SmartShipment.Information.Exceptions;
 using SmartShipment.Information.Properties;
 using SmartShipment.Network.Mapping;
+using SmartShipment.Settings.SettingsHelper;
 
 namespace SmartShipment.Adapters.Map
 {
     public abstract class ShipmentAutomationMapBase : IEnumerable<ShipmentAutomationBase>
     {
+        SmartShipmentsSettingsHelper _settingsProviderHelper = new SmartShipmentsSettingsHelper();
+        private int _transferSpeed = 1000;
+
         protected readonly IShipmentAutomationControlHelper AutomationControlHelper;
 
         protected AutomationElement RootAutomationElement;
@@ -25,7 +30,7 @@ namespace SmartShipment.Adapters.Map
             AutomationControlHelper = automationControlHelper;
             RootAutomationElement = rootAutomationElement;
             MessagesProvider = messagesProvider;
-            CloseModalWindowsWait();        
+            CloseModalWindowsWait();       
             Init();
         }
 
@@ -83,6 +88,9 @@ namespace SmartShipment.Adapters.Map
                 ControlsList = new List<ShipmentAutomationBase>();
                 InitAutomationControls();               
             }
+            
+            _settingsProviderHelper.InitializeIniFile();
+            _transferSpeed = Convert.ToInt32(_settingsProviderHelper.GetValue("GeneralTransferSpeed"));
         }
 
         IEnumerator<ShipmentAutomationBase> IEnumerable<ShipmentAutomationBase>.GetEnumerator()
@@ -113,17 +121,20 @@ namespace SmartShipment.Adapters.Map
         private void MapShipmentData<T>(IEnumerable<T> controlList, ShipmentDataType type, IEnumerable<IShipmentValue<string>> data) where T : ShipmentAutomationControl
         {
             var shipmentValues = data as IList<IShipmentValue<string>> ?? data.ToList();
-            foreach (var control in controlList.Where(c => c.ShipmentDataType == type 
+            var filteredControlList = controlList.Where(c => c.ShipmentDataType == type 
                                                         && c.AutomationElement != null  
                                                         && !string.IsNullOrEmpty(c.DataFieldName))
                                                .OrderBy(c => c.Order)
-                                               .ToList())
+                                               .ToList();
+            foreach (var control in filteredControlList)
             {
                 var shipmentValue = shipmentValues.FirstOrDefault(s => s.ValueMapName == control.DataFieldName);
                 if (shipmentValue?.Value != null)
                 {
-                    control.SetValueToControl(shipmentValue.Value);                                        
-                }                
+                    control.AutomationElement.SetFocus();
+                    control.SetValueToControl(shipmentValue.Value);
+                    Thread.Sleep(_transferSpeed);
+                }               
             }
         }
 

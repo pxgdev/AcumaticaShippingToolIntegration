@@ -9,7 +9,7 @@ namespace SmartShipment.UI.Views
         event Action OnSettingsSave;
 
         Form Form { get; }
-        
+
         //Credentials
         TextBox TextAcumaticaLogin { get; }
         TextBox TextAcumaticaPassword { get; }
@@ -22,6 +22,7 @@ namespace SmartShipment.UI.Views
         CheckBox FedexAddUpdateAddressBook { get; }
 
         Button TestButton { get; }
+        ComboBox GeneralTransferSpeed { get; }
                 
         void SetControlsVisible();
         void SetFormAttributes();
